@@ -1,0 +1,107 @@
+<template>
+<div>
+  <mu-card> 
+  <mu-card-media title="" subTitle="CA锁办锁流程">
+    <img src="../../static/img/title.jpg" />
+  </mu-card-media>
+  <div class="topped">
+  <mu-card-text>
+    <p >重要提示：</p>
+    <p style="text-indent:2em">中心新版电子招投标交易平台于2016年4月1日上线运行，在此之后注册的招投标单位（房建、市政），请务必同时注册新系统，办理CA，由中心人员激活方可使用，用于业务办理。</p>
+    <p style="text-indent:2em">（1）旧系统用户访问www.qjggzy.cn。非房建、市政投标企业未注册的单位先点击网员注册，选择用户名登录。</p>
+    <p style="text-indent:2em">投标人请按照网站下载中心操作手册进行企业注册，录入企业各项信息后，带上所有上传资料的复印件加盖公章，到潜江市公共资源交易中心审核后，方可办理CA认证锁。</p>
+    <img src="../../static/img/ca001.jpg" width="300" />
+    <p style="text-indent:2em">（2）新系统用户访问www.qjggzy.cn。房建、市政、水利（包括专业承包）投标企业未注册的单位先点击全流程电子招投标平台，选择前台登录，然后点击注册。</p>
+    <p style="text-indent:2em">（注：基本信息录入时，上传附件请把企业公章、法人私章一起上传），带上所有上传资料的复印件加盖公章，到潜江市公共资源交易中心审核后，方可办理CA认证锁。</p>
+    <img src="../../static/img/ca002.jpg" width="300" />
+  </mu-card-text></div>
+</mu-card>
+  <!--底部导航-->
+  <div class="seize-seat-top"></div>
+   
+</div>
+</template>
+
+<script>
+export default{
+    
+}
+</script>
+
+<style scoped lang="css">
+.Top-Class{
+      position:fixed;
+      box-shadow: 0px 0px 0px !important;
+      text-align: none;
+      font-size: 1.2em;
+      overflow:auto;
+  }
+
+.seize-seat-top{
+      height: 40px;
+  }
+
+
+.topic-class{
+    width: 100%;
+    background-color: #fff;
+    background-image: url(http://placeimg.com/828/196/any);
+    background-size: 100% 100%;  
+    -moz-background-size: 100% 100%;  
+    -webkit-background-size: 100% 100%;
+  }
+  .topic-class-left{
+    width: 10%;
+    color: #fff;
+    text-align:center;
+  }
+  .topic-class-right{
+    width: 10%;
+    text-align: center;
+    color: #fff;
+    padding-top: 0.5em;
+    line-height: 5em;
+  }
+  .topic-class-content{
+    width: 80%;
+    border-left: 3px solid #fff;
+    padding-left: 1em;
+    color: #fff;
+  }
+  .topic-class-content p{
+    margin: 0;
+    padding: 0;
+  }
+  .topic-class-background{
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    width: 100%;
+    height: 7em;
+    padding: 1em 0 .5em 0;
+  }
+.topped{
+    height: 100;
+    overflow-y:auto;
+    margin-top: .5em;
+    background-color: #fff;
+  }
+.topped-header{
+    height: 3em;
+    line-height: 3em;
+    padding-left: 0.5em;
+  }
+.topped-content{
+    width: 100%;
+    padding: 0.1em;
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+  }
+.topped-content-text{
+    width: 60%;
+  }
+.topped-content-img{
+    padding-left: 10%;
+    width: 40%;
+  }
+  
+</style>
