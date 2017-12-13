@@ -53,24 +53,7 @@
                 axios.get("http://www.qjggzy.cn/qjztb/gy/wx_new_info.do?newId=" + id)
                     .then(function(response) {
                         that.data = response.data
-                        let str = that.data.newValue
-                        //匹配图片（g表示匹配所有结果i表示区分大小写）
-                        let imgReg = /<img.*?(?:>|\/>)/gi;
-                        //匹配src属性
-                        let srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i;
-                        let arr = str.match(imgReg);
-                        window.alert('所有已成功匹配图片的数组：'+arr);
-                        
-                        for (let i = 0; i < arr.length; i++) {
-                            let src = arr[i].match(srcReg);
-                            //获取图片地址
-                            if(src[1]){
-                                window.alert('已匹配的图片地址'+(i+1)+'：'+src[1]);
-                                this.imgpaths.push(src[1])
-                            }                    
-                        }
                         console.log(this.imgpaths.length)
-                        that.data.author = {imgpath:'./static/img/tx.jpg'}
                         // console.log(that.data)
                     })
             },
@@ -87,7 +70,26 @@
                     $('#topdown_wrap').stop(false,true).fadeOut('slow')
                 }
                 console.log(this.scroll)
+            },
+            matcher(){
+                    let str = this.data.newValue
+                    //匹配图片（g表示匹配所有结果i表示区分大小写）
+                    let imgReg = /<img.*?(?:>|\/>)/gi;
+                    //匹配src属性
+                    let srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i;
+                    let arr = str.match(imgReg);
+                    window.alert('所有已成功匹配图片的数组：'+arr);
+                    
+                    for (let i = 0; i < arr.length; i++) {
+                        let src = arr[i].match(srcReg);
+                        //获取图片地址
+                        if(src[1]){
+                            window.alert('已匹配的图片地址'+(i+1)+'：'+src[1]);
+                            this.imgpaths.push(src[1])
+                        }                    
+                    }
             }
+
         },
         mounted(){
             window.addEventListener('scroll',this.menu)

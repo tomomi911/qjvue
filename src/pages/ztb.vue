@@ -1,13 +1,13 @@
 <template>
 <div>
   <mu-card> 
-  <mu-card-media title="" subTitle="招投标服务流程">
+  <mu-card-media title="" subTitle="进场交易流程">
     <img src="../../static/img/title.jpg" />
   </mu-card-media>
   <div class="topped">
   <mu-card-text>
     
-    <img src="../../static/img/ztb.jpg" width="300" />
+    <img src="../../static/img/jcjy.jpg" width="300" />
 
   </mu-card-text></div>
 </mu-card>
