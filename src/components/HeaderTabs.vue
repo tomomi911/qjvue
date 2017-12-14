@@ -3,13 +3,13 @@
   <div class=" HeaderTabs">
     <mu-appbar class="Top-Class" :title="parentName">
     </mu-appbar>
-   <mu-tabs class="tabs" :value="activeTab" @change="handleTabChange">
+   <!--<mu-tabs class="tabs" :value="activeTab" @change="handleTabChange">
       <mu-tab value="2" icon="domain" title="招标公告" />
       <mu-tab value="3" icon="public" title="澄清答疑" />
       <mu-tab value="4" icon="group" title="评标公示" />
-    </mu-tabs> 
-     <div>
-      <!--<div style="width:33%;float:left">
+    </mu-tabs> -->
+    <div>
+      <div style="width:33%;float:left">
         <input id="tab1" type="radio" name="tabs" checked>
         <label for="tab1">招标公告</label>
       </div>
@@ -20,24 +20,21 @@
       <div style="width:33%;float:left">
         <input id="tab3" type="radio" name="tabs">
         <label for="tab3">评标公示</label>
-      </div>-->
-      
-      
-      
-     
-  <!--<section id="content1">
-    <h3>Some Info</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis adipiscing risus, porttitor viverra urna condimentum et. Donec vestibulum lacus vel dolor dictum pellentesque. Aliquam sodales sem quis urna condimentum, sit amet elementum magna semper.</p>
-  </section>
-  <section id="content2">
-    <h3>Something</h3>
-    <p>Aliquam condimentum hendrerit nisi, nec vestibulum mi feugiat ut. Donec lobortis nisi neque, in egestas eros venenatis eu. Vestibulum nulla nisi, venenatis at pretium id, fermentum quis risus. Quisque porta suscipit neque eu placerat. Etiam scelerisque, quam in sodales iaculis, velit velit mattis nunc, quis dapibus massa elit nec enim. Vivamus quis libero aliquam, volutpat nisl sed, consectetur ante. Donec aliquam semper felis, in placerat leo blandit in. Integer interdum elit quis felis tempor venenatis. In faucibus ac mauris id commodo. Proin in sapien tincidunt, luctus mi id, bibendum dui. Nunc tincidunt libero ut purus vehicula, sit amet tincidunt mi sollicitudin. Donec varius erat magna, sed convallis purus adipiscing ut. Duis sagittis ut leo ut auctor. Ut convallis nisl nec purus sollicitudin, nec iaculis felis rutrum. </p>
-  </section>
-  <section id="content3">
-    <h3>Heading Text</h3>
-    <p>Fusce pulvinar porttitor dui, eget ultrices nulla tincidunt vel. Suspendisse faucibus lacinia tellus, et viverra ligula. Suspendisse eget ipsum auctor, congue metus vel, dictum erat. Aenean tristique euismod molestie. Nulla rutrum accumsan nisl, ac semper sapien tincidunt et. Praesent tortor risus, commodo et sagittis nec, aliquam quis augue. Aenean non elit elementum, tempor metus at, aliquam felis.</p>
-  </section>-->
-     </div>   
+      </div>
+        
+      <section id="content1">
+        <h3>Some Info</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis adipiscing risus, porttitor viverra urna condimentum et. Donec vestibulum lacus vel dolor dictum pellentesque. Aliquam sodales sem quis urna condimentum, sit amet elementum magna semper.</p>
+      </section>
+      <section id="content2">
+        <h3>Something</h3>
+        <p>Aliquam condimentum hendrerit nisi, nec vestibulum mi feugiat ut. Donec lobortis nisi neque, in egestas eros venenatis eu. Vestibulum nulla nisi, venenatis at pretium id, fermentum quis risus. Quisque porta suscipit neque eu placerat. Etiam scelerisque, quam in sodales iaculis, velit velit mattis nunc, quis dapibus massa elit nec enim. Vivamus quis libero aliquam, volutpat nisl sed, consectetur ante. Donec aliquam semper felis, in placerat leo blandit in. Integer interdum elit quis felis tempor venenatis. In faucibus ac mauris id commodo. Proin in sapien tincidunt, luctus mi id, bibendum dui. Nunc tincidunt libero ut purus vehicula, sit amet tincidunt mi sollicitudin. Donec varius erat magna, sed convallis purus adipiscing ut. Duis sagittis ut leo ut auctor. Ut convallis nisl nec purus sollicitudin, nec iaculis felis rutrum. </p>
+      </section>
+      <section id="content3">
+        <h3>Heading Text</h3>
+        <p>Fusce pulvinar porttitor dui, eget ultrices nulla tincidunt vel. Suspendisse faucibus lacinia tellus, et viverra ligula. Suspendisse eget ipsum auctor, congue metus vel, dictum erat. Aenean tristique euismod molestie. Nulla rutrum accumsan nisl, ac semper sapien tincidunt et. Praesent tortor risus, commodo et sagittis nec, aliquam quis augue. Aenean non elit elementum, tempor metus at, aliquam felis.</p>
+      </section>
+    </div>   
     <div class="seize-seat-top"></div>   
     <!--列表展示-->
     <mu-list>
@@ -119,13 +116,15 @@
         this.nomore = false //切换tab，重置
         this.activeTab = val
         this.typeCount = parseInt(val)+parseInt(this.parentNumber)
-        this.url = 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type='+this.typeCount
+     //   this.url = 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type='+this.typeCount
+        this.url = '/gy/wx_new_list.do?type='+this.typeCount
         this.getData()
       },
       // 数据获取
       getData() {
         let that = this
-        that.url = 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type='+this.typeCount
+     //   that.url = 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type='+this.typeCount
+        that.url = '/gy/wx_new_list.do?type='+this.typeCount
         axios.get(this.url+'&pageNumber='+this.page).then(function(response) {
           that.items = response.data.data
           // console.log(that.items)

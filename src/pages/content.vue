@@ -50,10 +50,13 @@
             getData() {
                 let id = this.$route.query.id      
                 let that = this
-                axios.get("http://www.qjggzy.cn/qjztb/gy/wx_new_info.do?newId=" + id)
+                let url = '/gy/wx_new_info.do?newId='
+                let tmp = 'http://www.qjggzy.cn/qjztb/gy/wx_new_info.do?newId='
+                axios.get(url + id)
                     .then(function(response) {
                         that.data = response.data
-                        console.log(this.imgpaths.length)
+                        this.matcher()
+                        
                         // console.log(that.data)
                     })
             },

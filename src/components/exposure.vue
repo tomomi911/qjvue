@@ -44,7 +44,7 @@ import axios from 'axios'
               items:[],
               loading: false,
               scroller: null,              
-              url: 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type=6',
+              url: 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type=32',
               page:1              
           }
       },
@@ -54,7 +54,8 @@ import axios from 'axios'
                 if (!this.nomore) {
                 this.loading = true
                 this.page += 1
-                let url = this.url + '&pageNumber=' + this.page
+              //  let url = this.url + '&pageNumber=' + this.page
+                let url = '/gy/wx_new_list.do?type=32' + '&pageNumber=' + this.page
                 let arr = []                
                 setTimeout(() => {
                     let that = this
@@ -76,7 +77,8 @@ import axios from 'axios'
             getData() {
                 let that = this 
                 
-                let url = that.url + '&pageNumber=' + this.page                                   
+            //    let url = that.url + '&pageNumber=' + this.page  
+                let url = '/gy/wx_new_list.do?type=32'+'&pageNumber='+that.page                                 
                 axios.get(url).then(function(response) {
                 that.items = response.data.data
                 // console.log(that.items)
