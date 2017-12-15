@@ -50,15 +50,15 @@
             getData() {
                 let id = this.$route.query.id      
                 let that = this
-                let url = '/gy/wx_new_info.do?newId='
-                let tmp = 'http://www.qjggzy.cn/qjztb/gy/wx_new_info.do?newId='
+            //    let url = '/gy/wx_new_info.do?newId='
+                let url = 'http://www.qjggzy.cn/qjztb/gy/wx_new_info.do?newId='
                 axios.get(url + id)
                     .then(function(response) {
                         that.data = response.data
-                        this.matcher()
-                        
+                    //    that.jqtp()
                         // console.log(that.data)
                     })
+                                       
             },
             goback() {
                 this.$router.go(-1)
@@ -74,23 +74,25 @@
                 }
                 console.log(this.scroll)
             },
-            matcher(){
-                    let str = this.data.newValue
-                    //匹配图片（g表示匹配所有结果i表示区分大小写）
-                    let imgReg = /<img.*?(?:>|\/>)/gi;
-                    //匹配src属性
-                    let srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i;
-                    let arr = str.match(imgReg);
-                    window.alert('所有已成功匹配图片的数组：'+arr);
-                    
-                    for (let i = 0; i < arr.length; i++) {
-                        let src = arr[i].match(srcReg);
-                        //获取图片地址
-                        if(src[1]){
-                            window.alert('已匹配的图片地址'+(i+1)+'：'+src[1]);
-                            this.imgpaths.push(src[1])
-                        }                    
-                    }
+            jqtp(){
+                let that = this
+                let str = that.data.newValue
+                //匹配图片（g表示匹配所有结果i表示区分大小写）
+                let imgReg = /<img.*?(?:>|\/>)/gi;
+                //匹配src属性
+                let srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i;
+                let arr = str.match(imgReg);
+                window.alert('所有已成功匹配图片的数组：'+arr);
+                
+                for (let i = 0; i < arr.length; i++) {
+                    let src = arr[i].match(srcReg);
+                    //获取图片地址
+                    if(src[1]){
+                        window.alert('已匹配的图片地址'+(i+1)+'：'+src[1]);
+                        this.imgpaths.push(src[1])
+                    } 
+                    console.log(this.imgpaths)                   
+                }
             }
 
         },

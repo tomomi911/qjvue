@@ -1,6 +1,7 @@
 <template>
 <!--首页-->
     <div class="wrapper">
+        <HeaderBar></HeaderBar>
         <InfoFlex class="tabs"></InfoFlex>
     </div>
 </template>

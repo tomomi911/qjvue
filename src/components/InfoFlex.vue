@@ -1,8 +1,6 @@
 <template>
   <!--顶部tabs-->
   <div>
-    <mu-appbar class="Top-Class" :title="title">
-    </mu-appbar>
    <div class="seize-seat-top"></div>
     <!--<mu-row>
         <mu-col v-for="item in LaBel_Data" :key="item.type" class="label" width="40" tablet="40" desktop="40">
@@ -132,6 +130,7 @@
   /*交易信息 */
     .info-bar{
     width: 100%;
+    padding-top:8em;
 }
 .info-bar ul li{
     width: 33%;
