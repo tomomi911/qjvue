@@ -9,7 +9,7 @@
 <script>
     import HeaderBar from '@/components/HeaderBar.vue'
     import InfoFlex from '@/components/InfoFlex.vue'
-    import axios from 'axios'
+    
     export default {
         components: {
             HeaderBar,           

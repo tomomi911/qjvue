@@ -9,9 +9,12 @@ import 'muse-ui/dist/theme-light.css' // 使用 carbon 主题
 import * as filters from './util/filter' //import * as obj from "xxx" 会将 "xxx" 中所有 export 导出的内容组合成一个对象返回
 import $ from 'jquery'
 import fastclick from 'fastclick'
+import axios from 'axios'
 
 fastclick.attach(document.body);
 Vue.use(MuseUI)
+//axios.defaults.baseURL="../qjztb"
+Vue.prototype.axios = axios
 Vue.config.productionTip = false
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k])) //注册过滤器
 /* eslint-disable no-new */

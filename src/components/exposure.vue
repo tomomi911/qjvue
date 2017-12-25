@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+
   export default{
       mounted(){
          this.scroller = this.$el
@@ -44,7 +44,8 @@ import axios from 'axios'
               items:[],
               loading: false,
               scroller: null,              
-              url: 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type=32',
+           //  url: 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type=32',
+              url: '/gy/wx_new_list.do?type=32',
               page:1              
           }
       },
@@ -59,7 +60,7 @@ import axios from 'axios'
                 let arr = []                
                 setTimeout(() => {
                     let that = this
-                    axios.get(url).then(function(response) {
+                    this.axios.get(url).then(function(response) {
                     arr = response.data.data
                     if (arr.length === 0) {
                         that.loading = false
@@ -79,7 +80,7 @@ import axios from 'axios'
                 
                 let url = that.url + '&pageNumber=' + this.page  
             //    let url = '/gy/wx_new_list.do?type=32'+'&pageNumber='+that.page                                 
-                axios.get(url).then(function(response) {
+                this.axios.get(url).then(function(response) {
                 that.items = response.data.data
                 // console.log(that.items)
                 })

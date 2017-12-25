@@ -9,7 +9,7 @@
 .HeaderBar{
   position:fixed;
   top: 0;
-  height: 15rem;
+  height: 14rem;
   width:100%;
 }
 .appbar-search-field {

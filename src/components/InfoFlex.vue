@@ -2,13 +2,6 @@
   <!--顶部tabs-->
   <div>
    <div class="seize-seat-top"></div>
-    <!--<mu-row>
-        <mu-col v-for="item in LaBel_Data" :key="item.type" class="label" width="40" tablet="40" desktop="40">
-            <div class="label-content" :style="{ 'background-color': item.color }" @click="RunToLabel(item.type)" > 
-                <p>{{item.name}}</p>
-            </div>
-        </mu-col>
-    </mu-row>-->
      <div class="info-bar demo-raised-button-container">
         <ul class="clearfix">
             <li v-for="item in LaBel_Data" :key="item.type">
@@ -20,7 +13,6 @@
 </template>
 
 <script>
-  import axios from 'axios'
   export default {
     data() {
       return {

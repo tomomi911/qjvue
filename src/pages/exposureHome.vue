@@ -11,7 +11,6 @@
 <script>
     import HeaderBar from '@/components/HeaderBar.vue'
     import exposure from '@/components/exposure.vue'
-    import axios from 'axios'
     export default {
         components: {
             exposure,

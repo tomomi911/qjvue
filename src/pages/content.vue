@@ -50,9 +50,9 @@
             getData() {
                 let id = this.$route.query.id      
                 let that = this
-            //    let url = '/gy/wx_new_info.do?newId='
-                let url = 'http://www.qjggzy.cn/qjztb/gy/wx_new_info.do?newId='
-                axios.get(url + id)
+                let url = '/gy/wx_new_info.do?newId='
+            //    let url = 'http://www.qjggzy.cn/qjztb/gy/wx_new_info.do?newId='
+                this.axios.get(url + id)
                     .then(function(response) {
                         that.data = response.data
                     //    that.jqtp()
@@ -111,10 +111,15 @@
     width: 100%;
     }
     .content{
-        margin: 0 10px;
-        font-size: 14px;
-        color: #000;
+        margin: 0 18px;
+        font-size: 16px;
+        color: #000000;
         overflow-x: auto;
+        width: 90%;
+        overflow-x: auto;
+        margin-bottom: 12px;
+        line-height: 1.4;
+        font-weight: 400;
     }
 
     @import '../assets/sass/_base.scss';

@@ -79,7 +79,9 @@ export default{
     overflow-y:auto;
     margin-top: .5em;
     background-color: #fff;
+    text-align:center;
   }
+  
 .topped-header{
     height: 3em;
     line-height: 3em;

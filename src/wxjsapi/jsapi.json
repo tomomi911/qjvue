@@ -1,0 +1,16 @@
+{
+  "onMenuShareQZone": true,
+  "checkJsApi": true,
+  "startRecord": true,
+  "stopRecord": true,
+  "translateVoice": true,
+  "scanQRCode": true,
+  "openCard": true,
+  "chooseImage": true,
+  "getLocation": true,
+  "openLocation": true,
+  "getNetworkType": true,
+  "previewImage":true,
+  "uploadImage":true
+
+}

@@ -4,13 +4,8 @@
    
     <div class="title">
     <img src="../../static/img/title.jpg"/>
-    <div style="position:absolute;top:8em;left:2em;color:#FFFFFF;"><h3>{{parentName}}</h3></div>
+    <div style="position:absolute;top:7em;left:2em;color:#FFFFFF;"><h3>{{parentName}}</h3></div>
     </div>
-   <!--<mu-tabs class="tabs" :value="activeTab" @change="handleTabChange">
-      <mu-tab value="2" icon="domain" title="招标公告" />
-      <mu-tab value="3" icon="public" title="澄清答疑" />
-      <mu-tab value="4" icon="group" title="评标公示" />
-    </mu-tabs> -->
     <div class="tabstyle">
       <div style="width:33%;float:left">
         <input id="tab1" type="radio" name="tabs" @change="handleTabChange(2)" checked>
@@ -27,7 +22,7 @@
     </div>   
    <div class="seize-seat-top"></div>   
     <!--列表展示-->
-   <mu-list style="postition:absolute;height:100%;">
+   <mu-list style="postition:absolute;height:100%;background:#EFF2F7;">
       <div v-for="(item,index) in items">
         <div class="list">         
           <router-link :to="{path:'/qjhome/content',query:{id:item.newId}}" tag="div" class="content">
@@ -67,15 +62,11 @@
         nomore: false,
         activeTab: '2', //当前选中tab项
         items: [],
-        itemTab:[
-          {name:'招标公告', num:2},
-          {name:'澄清答疑', num:3},
-          {name:'评标公示', num:4}
-        ],
         styleObj: {
           backgroundColor: '#C5C5C7'
         },
-        url: 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type=',
+      //  url: 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type=',
+        url: '/gy/wx_new_list.do?type=',
         page: 1,
         currentTab:"",
         currentIndex:0,
@@ -86,9 +77,10 @@
      // 组件创建完后获取数据，
     created() {
       this.parentNumber="" 
-      this.parentName=""    
-      this.parentNumber = this.$route.query.parentNumber
-      this.parentName = this.$route.query.parentName
+      this.parentName=""  
+      this.items=[]  
+      this.parentNumber = this.$route.query.parentNumber  //父类类型代号
+      this.parentName = this.$route.query.parentName      //父类名称
       this.typeCount = parseInt(this.parentNumber)+2
       this.getData()
     },
@@ -106,16 +98,19 @@
         this.nomore = false //切换tab，重置
         this.activeTab = val
         this.typeCount = parseInt(val)+parseInt(this.parentNumber)
-        this.url = 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type='+this.typeCount
+    //    this.url = 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type='+this.typeCount
+        this.url = '/gy/wx_new_list.do?type='+this.typeCount
+        this.items=[]
      //   this.url = '/gy/wx_new_list.do?type='+this.typeCount
         this.getData()
       },
       // 数据获取
       getData() {
         let that = this
-        that.url = 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type='+that.typeCount
+      //  that.url = 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type='+that.typeCount
+        that.url = '/gy/wx_new_list.do?type='+that.typeCount
      //   that.url = '/gy/wx_new_list.do?type='+that.typeCount
-        axios.get(that.url+'&pageNumber='+that.page).then(function(response) {
+        this.axios.get(that.url+'&pageNumber='+that.page).then(function(response) {
           that.items = response.data.data
           // console.log(that.items)
           }).catch(function(error){
@@ -127,11 +122,12 @@
         if (!this.nomore) {
           this.loading = true
           this.page += 1
-          let url = this.url + '&pageNumber=' + this.page         
+          let url = this.url + '&pageNumber=' + this.page    
+      //    window.alert(url)     
           let arr = []         
           setTimeout(() => {
             let that = this
-            axios.get(url).then(function(response) {
+            this.axios.get(url).then(function(response) {
               arr = response.data.data
               if (arr.length === 0) {
                 that.loading = false
@@ -174,10 +170,10 @@
   }
   .title img{
     width:100%;
-    height:13em;
+    height:14rem;
   }
 .tabstyle{
-  position:absolute;padding-top:13em;width:100%;z-index:998;background:#FFFFFF;
+  position:absolute;padding-top:14rem;width:100%;z-index:998;background:#FFFFFF;
 }
 .Top-Class{
       position:fixed;
@@ -187,7 +183,7 @@
       font-size: 1.2em;
   }  
 .seize-seat-top{
-        height: 17em;
+        height: 15em;
     }
   .mu-tab-link,
   .mu-tab-active {
@@ -196,8 +192,10 @@
 
   .list {
     display: flex;
-    border-bottom: 0.6rem solid #EFF2F7;
-   
+    border-bottom: 0.1rem solid #EFF2F7;
+    background: #FFFFFF;
+    margin:0.2rem 1rem;
+    width:96%;
     padding:1rem;
     >img {
       width: 3rem;

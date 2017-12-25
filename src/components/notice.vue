@@ -44,7 +44,7 @@ import axios from 'axios'
               items:[],
               loading: false,
               scroller: null,              
-              url: 'http://www.qjggzy.cn/qjztb/gy/wx_new_list.do?type=22',
+              url: '/gy/wx_new_list.do?type=22',
               page:1              
           }
       },
@@ -58,7 +58,7 @@ import axios from 'axios'
                 let arr = []                
                 setTimeout(() => {
                     let that = this
-                    axios.get(url).then(function(response) {
+                    this.axios.get(url).then(function(response) {
                     arr = response.data.data
                     if (arr.length === 0) {
                         that.loading = false

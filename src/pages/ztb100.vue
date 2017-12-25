@@ -7,7 +7,7 @@
 
   <div class="topped">
   <mu-card-text>
-    <div align="center">招标投标知识100问</div>
+    <div align="center" style="font-size:16px;">招标投标知识100问</div>
 
 
     <p style="text-indent:2em">1、我市工程施工项目合同估算价达到多少，必须进入市公共资源交易中心招标？</p>
@@ -328,6 +328,9 @@ export default{
     overflow-y:auto;
     margin-top: .5em;
     background-color: #fff;
+  }
+  .topped p{
+    font-size: 16px;
   }
 .topped-header{
     height: 3em;

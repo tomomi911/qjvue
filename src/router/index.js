@@ -3,11 +3,7 @@ import Router from 'vue-router'
 // import Hello from '@/components/Hello'
 import info from '../pages/info'
 import home from '../pages/home'
-import message from '../pages/message'
 import notice from '../pages/noticeHome'
-import publish from '../pages/publish'
-import login from '../pages/login'
-import more from '../pages/more'
 import content from '../pages/content'
 import people from '../pages/people'
 import contextTabs from '../components/HeaderTabs'
@@ -43,39 +39,14 @@ export default new Router({
       component: info
     },
     {
-      path: '/qjhome/message',
-      name: 'message',
-      component: message
-    },
-    {
       path: '/qjhome/notice',
       name: 'notice',
       component: notice
     },
     {
-      path: '/qjhome/publish',
-      name: 'publish',
-      component: publish
-    },
-     {
-      path: '/qjhome/login',
-      name: 'login',
-      component: login
-    },
-    {
-      path: '/qjhome/more',
-      name: 'more',
-      component: more
-    },
-    {
       path: '/qjhome/content',
       name: 'content',
       component: content
-    },
-     {
-      path: '/qjhome/people',
-      name: 'people',
-      component: people
     },
     {
       path:'/qjhome/contextTabs',
