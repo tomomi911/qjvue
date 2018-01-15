@@ -237,7 +237,7 @@
   
   body {
   background: #FFEFD3;
-  font-family: "Open Sans", "Arial";
+  font-family: "宋体";
 }
 main {
   background: #FFF;

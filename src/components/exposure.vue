@@ -1,7 +1,7 @@
 <template>
 <div class="HeaderTabs">
 <!--列表展示-->
-<mu-list>
+<mu-list style="postition:absolute;height:100%;background:#EFF2F7;">
     <div v-for="(item,index) in items">
     <div class="list">       
         <!-- <router-link :to="{path:'/qjhome/people',query:{user:item.author.loginname}}" :src="item.author.avatar_url" tag="img" alt="user"></router-link>-->
@@ -111,15 +111,20 @@
     white-space: nowrap;
   }
 
-  .list {
+    .list {
     display: flex;
-    border-bottom: 0.6rem solid #EFF2F7;
-    padding: 1rem;
+    border-bottom: 0.1rem solid #EFF2F7;
+    background: #FFFFFF;
+    margin:0.2rem 1rem;
+    width:96%;
+    padding:1rem;
     >img {
       width: 3rem;
       height: 3rem;
       margin-right: 1rem;
     }
+
+
     .content {
       flex: 1;
       display: flex;

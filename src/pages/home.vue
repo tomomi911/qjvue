@@ -1,8 +1,8 @@
 <template>
 <div>
   <mu-card> 
-  <mu-card-media title="" subTitle="微门户">
-    <img src="../../static/img/headerTop.jpg" />
+  <mu-card-media title="" subTitle="">
+    <img src="../../static/img/title.jpg" />
   </mu-card-media>
   <mu-card-title title="简介" subTitle="abstract"/>
   <div class="topped">

@@ -13,7 +13,7 @@ import axios from 'axios'
 
 fastclick.attach(document.body);
 Vue.use(MuseUI)
-//axios.defaults.baseURL="../qjztb"
+axios.defaults.baseURL="../qjztb"
 Vue.prototype.axios = axios
 Vue.config.productionTip = false
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k])) //注册过滤器
